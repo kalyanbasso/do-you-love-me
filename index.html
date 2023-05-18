@@ -1,15 +1,68 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="/vite.svg">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️</title>
-    <script type="module" crossorigin="" src="/assets/index-94e8c684.js"></script>
-    <link rel="stylesheet" href="/assets/index-71bc0b4b.css">
-  </head>
-  <body class="vsc-initialized">
-    <div id="root"><h1>Você me ama?</h1><div class="btnContainer"><button class="yesBtn">Sim</button><div class="noBtnContainer"><button class="noBtn" style="top: 340px; left: 257px; position: absolute;">Não</button></div></div></div>
-    
-  
+<html>
+<head>
+  <title>Você me ama?</title>
+  <style>
+    body {
+      text-align: center;
+      margin-top: 150px;
+      font-family: Arial, sans-serif;
+      background-color: #545499/* Cor de fundo */
+    }
 
-</body></html>
+    h1 {
+      font-size: 32px;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    #yes-button {
+      background-color: #3CB371;
+      color: #FFF;
+    }
+
+    #no-button {
+      background-color: #FF6347;
+      color: #FFF;
+    }
+  </style>
+</head>
+<body>
+  <h1>Você me ama?</h1>
+  <a id="yes-button" class="button" href="#" onclick="showAlert()">Sim</a>
+  <a id="no-button" class="button" href="#">Não</a>
+
+  <script>
+    var yesButton = document.getElementById("yes-button");
+    var noButton = document.getElementById("no-button");
+    var bodyWidth = document.body.clientWidth;
+    var bodyHeight = document.body.clientHeight;
+    var buttonWidth = noButton.offsetWidth;
+    var buttonHeight = noButton.offsetHeight;
+
+    noButton.addEventListener("mouseover", function() {
+      var randomX = Math.random() * (bodyWidth - buttonWidth);
+      var randomY = Math.random() * (bodyHeight - buttonHeight);
+
+      var translateX = randomX - bodyWidth / 2;
+      var translateY = randomY - bodyHeight / 2;
+
+      noButton.style.transform = "translate(" + translateX + "px, " + translateY + "px)";
+    });
+
+    function showAlert() {
+      alert("Eu também te amo <3!");
+    }
+  </script>
+</body>
+</html>
